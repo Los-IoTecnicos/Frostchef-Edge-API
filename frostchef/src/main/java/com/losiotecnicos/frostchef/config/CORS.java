@@ -18,7 +18,7 @@ public class CORS {
                 @Override
                 public void addCorsMappings(CorsRegistry registry) {
                     registry.addMapping("/**")
-                            .allowedOrigins("http://frostchef-edge-api-production.up.railway.app:8080")
+                            .allowedOrigins("http://frostchef-edge-api-production.up.railway.app")
                             .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                             .allowedHeaders("*")
                             .allowCredentials(true);
