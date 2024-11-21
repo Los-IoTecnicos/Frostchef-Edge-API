@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SensorWriteRepository extends JpaRepository<Sensor, Long> {
+        Sensor findByMacAddress(String macAddress);
 }

@@ -1,10 +1,22 @@
 package com.losiotecnicos.frostchef.application.dto;
 
 public class SensorDTO {
+
+
+
+    private String macAddress;
     private double temperature;
     private double humidity;
     private double proximity;
     private double gasMethane;
+
+    public String getMacAddress() {
+        return macAddress;
+    }
+
+    public void setMacAddress(String macAddress) {
+        this.macAddress = macAddress;
+    }
 
     public double getTemperature() {
         return temperature;

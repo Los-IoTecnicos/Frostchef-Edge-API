@@ -9,12 +9,22 @@ public class Sensor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+
+
+    private String macAddress;
     private double temperature;
     private double humidity;
     private double proximity;
     private double gasMethane;
 
+    public String getMacAddress() {
+        return macAddress;
+    }
 
+    public void setMacAddress(String macAddress) {
+        this.macAddress = macAddress;
+    }
     public double getHumidity() {
         return humidity;
     }

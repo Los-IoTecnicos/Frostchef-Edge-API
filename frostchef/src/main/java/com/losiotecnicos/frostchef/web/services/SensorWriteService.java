@@ -15,10 +15,23 @@ public class SensorWriteService {
 
     public Sensor saveSensor(SensorDTO sensorDTO) {
         Sensor sensor = new Sensor();
+        sensor.setMacAddress(sensorDTO.getMacAddress());
         sensor.setTemperature(sensorDTO.getTemperature());
         sensor.setHumidity(sensorDTO.getHumidity());
         sensor.setProximity(sensorDTO.getProximity());
         sensor.setGasMethane(sensorDTO.getGasMethane());
         return sensorWriteRepository.save(sensor);
+    }
+
+    public Sensor updateSensor(SensorDTO sensorDTO) {
+        Sensor sensor = sensorWriteRepository.findByMacAddress(sensorDTO.getMacAddress());
+        if (sensor != null) {
+            sensor.setTemperature(sensorDTO.getTemperature());
+            sensor.setHumidity(sensorDTO.getHumidity());
+            sensor.setProximity(sensorDTO.getProximity());
+            sensor.setGasMethane(sensorDTO.getGasMethane());
+            return sensorWriteRepository.save(sensor);
+        }
+        return null;
     }
 }

@@ -24,6 +24,7 @@ public class SensorReadService {
 
     private SensorDTO convertToDTO(Sensor sensor) {
         SensorDTO dto = new SensorDTO();
+        dto.setMacAddress(sensor.getMacAddress());
         dto.setTemperature(sensor.getTemperature());
         dto.setHumidity(sensor.getHumidity());
         dto.setProximity(sensor.getProximity());
