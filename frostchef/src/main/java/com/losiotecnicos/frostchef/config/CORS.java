@@ -25,8 +25,7 @@ public class CORS {
                 // Permite solicitudes de todos los orígenes
                 registry.addMapping("/**")
                         .allowedOrigins("http://localhost:8080", "https://frostchef-edge-api-production.up.railway.app",
-                                "http://frostchef-edge-api-production.up.railway.app",
-                                "https://frostchef-edge-api-production.up.railway.app") // o '*' para todos los orígenes
+                                "http://frostchef-edge-api-production.up.railway.app:8080") // o '*' para todos los orígenes
 
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
