@@ -31,4 +31,8 @@ public class SensorReadService {
         dto.setGasMethane(sensor.getGasMethane());
         return dto;
     }
+
+    public boolean isSensorRegistered(String macAddress) {
+        return sensorReadRepository.findByMacAddress(macAddress) != null;
+    }
 }

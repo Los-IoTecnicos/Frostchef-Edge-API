@@ -5,6 +5,7 @@ import com.losiotecnicos.frostchef.web.services.SensorReadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -19,6 +20,11 @@ public class SensorReadController {
     @GetMapping
     public List<SensorDTO> getAllSensors() {
         return sensorReadService.getAllSensors();
+    }
+
+    @GetMapping("/check")
+    public boolean isSensorRegistered(@RequestParam String macAddress) {
+        return sensorReadService.isSensorRegistered(macAddress);
     }
 }
 
