@@ -18,7 +18,7 @@ public class CORS {
             public void addCorsMappings(CorsRegistry registry) {
                 // Permite solicitudes de todos los orígenes
                 registry.addMapping("/**")
-                        .allowedOrigins("http://frostchef-edge-api-production.up.railway.app") // o '*' para todos los orígenes
+                        .allowedOrigins("*") // o '*' para todos los orígenes
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
